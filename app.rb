@@ -5,7 +5,7 @@ require "pry"
 get("/") do
   erb(:index)
 end
-ActiveRecord::Base.establish_connection(ENV['postgres://yfnigfwranpprr:KUvhh49qrOnYNOtv6NqG_X7x8-@ec2-23-23-188-252.compute-1.amazonaws.com:5432/d90dhghk30gusn'])
+# ActiveRecord::Base.establish_connection(ENV['postgres://yfnigfwranpprr:KUvhh49qrOnYNOtv6NqG_X7x8-@ec2-23-23-188-252.compute-1.amazonaws.com:5432/d90dhghk30gusn'])
 
 get("/recipes") do
   @recipes = Recipe.order('rating DESC')
@@ -29,8 +29,8 @@ end
 get("/recipe/:id") do
   recipe_id = params.fetch("id").to_i
   @recipe = Recipe.find(recipe_id)
+  @category = Category.all()
   @ingredients = Ingredient.all()
-  @categories = Category.all()
   erb(:recipe)
 end
 

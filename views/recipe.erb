@@ -2,6 +2,9 @@
 <h4>Rating: <%= @recipe.rating() %> Stars&nbsp&nbsp&nbsp
 
 Categories:
+<% @recipe.categories.each() do |category| %>
+    <li><%= category.name() %></li>
+<% end %>
 
 </h4>
 <br>
