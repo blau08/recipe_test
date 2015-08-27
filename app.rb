@@ -6,7 +6,7 @@ get("/") do
   erb(:index)
 end
 
-ActiveRecord::Base.establish_connection(ENV['postgres://vbzsjlvocvupoa:607J1j5V7P0h6hLiIxIRkUIep1@ec2-54-204-13-220.compute-1.amazonaws.com:5432/d2dv31rnhangrg'])
+ActiveRecord::Base.establish_connection(ENV['postgres://vximxpeknhtqrl:7-4SCy44fc1ehnSwMSJRDIuoR7@ec2-23-23-188-252.compute-1.amazonaws.com:5432/da4q8pst35uv41'])
 
 get("/recipes") do
   # recipe_id = params.fetch('recipe_id')
