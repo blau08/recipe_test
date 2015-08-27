@@ -1,7 +1,15 @@
 <h1>Recipes</h1>
 <hr>
 <% @recipes.each() do |recipe| %>
-    <li><a href = "/recipe/<%= recipe.id() %>"><%= recipe.name() %>: <%= recipe.rating() %> Stars</a></li>
+    <li><a href = "/recipe/<%= recipe.id() %>"><%= recipe.name() %>:
+        <% if recipe.rating() != nil %>
+
+        <% recipe.rating().times() do %>
+
+        &#9733;
+
+        <%end%></a></li>
+        <%end%>
 <% end %>
 <br>
 <h3>Add a recipe:</h3>
